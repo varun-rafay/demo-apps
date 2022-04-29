@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: echo
 spec:
-  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 5678
