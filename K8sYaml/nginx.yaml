@@ -19,6 +19,7 @@ spec:
     matchLabels:
       app: nginx
   replicas: 1
+  revisionHistoryLimit: 100
   template:
     metadata:
       labels:
