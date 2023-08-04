@@ -1,0 +1,70 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: varun-eks-127-test-2
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default
+  cloudCredentials: varun-eks
+  config:
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
+    managedNodeGroups:
+    - amiFamily: Ubuntu2004
+      desiredCapacity: 2
+      instanceTypes:
+      - t3.medium
+      maxSize: 3
+      minSize: 0
+      name: ng-187f0693
+      ssh:
+        allow: true
+        publicKeyName: varun
+      version: "1.27"
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceTypes:
+      - t3.medium
+      maxSize: 2
+      minSize: 1
+      name: ng-d73ec1a3
+      tags:
+        email: varun.c@rafay.co
+        env: qa
+      volumeSize: 80
+      volumeType: gp3
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceTypes:
+      - t3.xlarge
+      maxSize: 2
+      minSize: 1
+      name: ng-6fe2d04d
+      tags:
+        email: varun.chandrashekar@rafay.co
+        env: qa
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: varun-eks-127-test-2
+      region: us-west-2
+      tags:
+        email: varun.c@rafay.co
+        env: qa
+      version: "1.27"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: true
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
