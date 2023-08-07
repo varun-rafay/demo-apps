@@ -14,11 +14,11 @@ spec:
       version: latest
     managedNodeGroups:
     - amiFamily: Ubuntu2004
-      desiredCapacity: 3
+      desiredCapacity: 2
       instanceTypes:
       - t3.xlarge
       maxSize: 3
-      minSize: 3
+      minSize: 2
       name: ng-f965bed1
       version: "1.27"
       volumeSize: 80
