@@ -23,6 +23,18 @@ spec:
       version: "1.27"
       volumeSize: 80
       volumeType: gp3
+    - amiFamily: AmazonLinux2
+      desiredCapacity: 1
+      instanceTypes:
+      - t3.xlarge
+      maxSize: 2
+      minSize: 1
+      name: ng-56419db3
+      tags:
+        email: varun.c@rafay.co
+        env: qa
+      volumeSize: 80
+      volumeType: gp3
     metadata:
       name: varun-127-eks
       region: us-west-2
