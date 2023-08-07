@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: default
-    version: 1.28.0
+    name: varun-servicemesh-networkpolicy
+    version: v1
   cloudCredentials: varun-eks
   config:
     addons:
