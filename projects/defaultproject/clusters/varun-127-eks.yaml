@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: np-ns-a-allow-ns-b
-    version: v1
+    name: varun-costmg
+    version: v2
   cloudCredentials: varun-eks
   config:
     addons:
