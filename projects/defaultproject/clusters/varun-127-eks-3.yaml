@@ -9,6 +9,9 @@ spec:
     version: 1.28.0
   cloudCredentials: varun-eks
   config:
+    addons:
+    - name: aws-ebs-csi-driver
+      version: latest
     managedNodeGroups:
     - amiFamily: Ubuntu2004
       desiredCapacity: 3
