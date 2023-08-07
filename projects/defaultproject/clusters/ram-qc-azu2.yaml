@@ -1,0 +1,50 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: ram-qc-azu2
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: default-aks
+  cloudCredentials: kalyan-azure
+  config:
+    kind: aksClusterConfig
+    metadata:
+      name: ram-qc-azu2
+    spec:
+      managedCluster:
+        apiVersion: "2022-07-01"
+        identity:
+          type: SystemAssigned
+        location: centralindia
+        properties:
+          apiServerAccessProfile:
+            enablePrivateCluster: false
+          dnsPrefix: ram-qc-azu2-dns
+          kubernetesVersion: 1.26.3
+          networkProfile:
+            loadBalancerSku: standard
+            networkPlugin: kubenet
+        sku:
+          name: Basic
+          tier: Free
+        type: Microsoft.ContainerService/managedClusters
+      nodePools:
+      - apiVersion: "2022-07-01"
+        location: centralindia
+        name: primary
+        properties:
+          count: 1
+          enableAutoScaling: true
+          maxCount: 1
+          maxPods: 110
+          minCount: 1
+          mode: System
+          orchestratorVersion: 1.26.3
+          osType: Linux
+          type: VirtualMachineScaleSets
+          vmSize: Standard_B2ms
+        type: Microsoft.ContainerService/managedClusters/agentPools
+      resourceGroupName: ram-rg1
+  proxyConfig: {}
+  type: aks
