@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: varun-servicemesh-networkpolicy
-    version: v1
+    name: varun-costmg
+    version: v2
   cloudCredentials: varun-eks
   config:
     addons:
