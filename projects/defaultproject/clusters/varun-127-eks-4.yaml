@@ -23,18 +23,6 @@ spec:
       version: "1.27"
       volumeSize: 80
       volumeType: gp3
-    - amiFamily: Ubuntu2004
-      desiredCapacity: 2
-      instanceTypes:
-      - t3.xlarge
-      maxSize: 2
-      minSize: 2
-      name: ng-9f90706a
-      tags:
-        email: varun.chandrashekar@rafay.co
-        env: qa
-      volumeSize: 80
-      volumeType: gp3
     metadata:
       name: varun-127-eks-4
       region: us-west-2
