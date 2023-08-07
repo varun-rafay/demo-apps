@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: minimal
-    version: Latest
+    version: 1.28.0
   cloudCredentials: varun-eks
   config:
     managedNodeGroups:
