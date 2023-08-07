@@ -1,47 +1,32 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: varun-127-eks2
+  name: varun-127-eks-3
   project: defaultproject
 spec:
   blueprintConfig:
-    name: varun-servicemesh-networkpolicy
-    version: v1
+    name: minimal
+    version: Latest
   cloudCredentials: varun-eks
   config:
-    addons:
-    - name: aws-ebs-csi-driver
-      version: latest
     managedNodeGroups:
-    - amiFamily: AmazonLinux2
-      desiredCapacity: 2
-      instanceTypes:
-      - t3.medium
-      maxSize: 2
-      minSize: 2
-      name: ng-59c84338
-      version: "1.27"
-      volumeSize: 80
-      volumeType: gp3
     - amiFamily: Ubuntu2004
-      desiredCapacity: 2
+      desiredCapacity: 3
       instanceTypes:
       - t3.xlarge
-      maxSize: 2
-      minSize: 2
-      name: ng2
-      tags:
-        email: varun.chandrashekar@rafay.co
-        env: qa
+      maxSize: 3
+      minSize: 3
+      name: ng-b8e2b669
+      version: "1.25"
       volumeSize: 80
       volumeType: gp3
     metadata:
-      name: varun-127-eks2
+      name: varun-127-eks-3
       region: us-west-2
       tags:
         email: varun.chandrashekar@rafay.co
         env: qa
-      version: "1.27"
+      version: "1.25"
     network:
       cni:
         name: aws-cni
