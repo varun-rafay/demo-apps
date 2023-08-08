@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    ram: "true"
   name: ram-qc-azu2
   project: defaultproject
 spec:
