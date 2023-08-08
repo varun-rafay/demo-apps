@@ -1,0 +1,41 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: varun-eks-ee311
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+    version: Latest
+  cloudCredentials: varun-eks
+  config:
+    managedNodeGroups:
+    - amiFamily: Ubuntu2004
+      desiredCapacity: 2
+      instanceTypes:
+      - t3.medium
+      maxSize: 2
+      minSize: 2
+      name: ng1
+      version: "1.26"
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: varun-eks-ee311
+      region: us-west-2
+      tags:
+        email: varun.chandrashekar@rafay.co
+        env: qa
+      version: "1.26"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: true
+      nat:
+        gateway: Single
+  proxyConfig: {}
+  type: aws-eks
