@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    ram: test
   name: ram-qc-azu3
   project: defaultproject
 spec:
